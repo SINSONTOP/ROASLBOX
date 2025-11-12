@@ -1,0 +1,188 @@
+local DupeGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local GuiTextLabel = Instance.new("TextLabel")
+local SelectedText = Instance.new("TextLabel")
+local GunListScrollingFrame = Instance.new("ScrollingFrame")
+local UICorner_2 = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+
+--Properties:
+
+DupeGui.Name = "DupeGui"
+DupeGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+DupeGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = DupeGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0.369272232, 0, 0.319478929, 0)
+MainFrame.Size = UDim2.new(0, 387, 0, 258)
+
+UICorner.Parent = MainFrame
+
+GuiTextLabel.Name = "GuiTextLabel"
+GuiTextLabel.Parent = MainFrame
+GuiTextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GuiTextLabel.BackgroundTransparency = 1.000
+GuiTextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GuiTextLabel.BorderSizePixel = 0
+GuiTextLabel.Position = UDim2.new(0.0335917324, 0, 0, 0)
+GuiTextLabel.Size = UDim2.new(0, 361, 0, 38)
+GuiTextLabel.Font = Enum.Font.SourceSansSemibold
+GuiTextLabel.Text = "SINS BAGONG BARYO GUN DUPE"
+GuiTextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+GuiTextLabel.TextSize = 25.000
+GuiTextLabel.TextWrapped = true
+
+SelectedText.Name = "SelectedText"
+SelectedText.Parent = MainFrame
+SelectedText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SelectedText.BackgroundTransparency = 1.000
+SelectedText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SelectedText.BorderSizePixel = 0
+SelectedText.Position = UDim2.new(0.0335917324, 0, 0.120155036, 0)
+SelectedText.Size = UDim2.new(0, 361, 0, 38)
+SelectedText.Font = Enum.Font.SourceSansSemibold
+SelectedText.Text = "SELECTED"
+SelectedText.TextColor3 = Color3.fromRGB(255, 255, 255)
+SelectedText.TextSize = 25.000
+SelectedText.TextWrapped = true
+
+GunListScrollingFrame.Name = "GunListScrollingFrame"
+GunListScrollingFrame.Parent = MainFrame
+GunListScrollingFrame.Active = true
+GunListScrollingFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+GunListScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GunListScrollingFrame.BorderSizePixel = 0
+GunListScrollingFrame.Position = UDim2.new(0.0981912166, 0, 0.267441869, 0)
+GunListScrollingFrame.Size = UDim2.new(0, 311, 0, 138)
+GunListScrollingFrame.ScrollBarThickness = 5
+
+UICorner_2.Parent = GunListScrollingFrame
+
+TextButton.Parent = MainFrame
+TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.18346253, 0, 0.841085255, 0)
+TextButton.Size = UDim2.new(0, 240, 0, 31)
+TextButton.Font = Enum.Font.SourceSansSemibold
+TextButton.Text = "Start Dupe : Off"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 25.000
+
+-- Customizable guns table: Add or edit guns here. Each gun has a name and a script function.
+-- To add a new gun, just add a new entry like: {name = "NewGun", script = function() -- your custom script here end}
+local guns = {
+	{name = "Silenced Pistol", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("Silenced Pistol") end},
+	{name = "ace", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("ace") end},
+	{name = "aces", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("aces") end},
+	{name = "aike", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("aike") end},
+	{name = "alaspogi", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("alaspogi") end},
+	{name = "armor", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("armor") end},
+	{name = "anghel", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("anghel") end},
+	{name = "ILOVECHICA", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("ILOVECHICA") end},
+	{name = "anghelgirls", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("anghelgirls") end},
+	{name = "antonio", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("antonio") end},
+	{name = "antonio2	", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("antonio2") end},
+	{name = "asaoka", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("asaoka") end},
+	{name = "ashii", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("ashii") end},
+	{name = "Shotgun", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("asiancrab") end},
+	{name = "astig", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("astig") end},
+	{name = "autumn", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("autumn") end},
+	{name = "avrie", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("avrie") end},
+	{name = "batchi", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("batchi") end},
+	{name = "bench", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("bench") end},
+	{name = "berto", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("berto") end},
+	{name = "bham", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("bham") end},
+	{name = "block", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("block") end},
+	{name = "bry", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("bry") end},
+	{name = "caleb", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("caleb") end},
+	{name = "carl", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("carl") end},
+	{name = "carlo", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("carlo") end},
+	{name = "carlz", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("carlz") end},
+	{name = "cash", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("cash") end},
+	{name = "chazz", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("chazz") end},
+	{name = "chino", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("chino") end},
+	{name = "chira", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("chira") end},
+	{name = "chris", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("chris") end},
+	{name = "chris2", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("chris2") end},
+	{name = "chrollo", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("chrollo") end},
+	{name = "coach", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("coach") end},
+	{name = "cody", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("cody") end},
+	{name = "crv", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("crv") end},
+	{name = "cuervo", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("cuervo") end},
+	{name = "cute", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("cute") end},
+	{name = "dagz", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("dagz") end},
+	{name = "dan", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("dan") end},
+	{name = "daniel", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("daniel") end},
+	-- {name = "Rifle", script = function() game:GetService("ReplicatedStorage").BuyItemRemote:FireServer("Rifle") end},
+	-- You can customize the script for each gun individually.
+}
+
+local selectedGun = nil
+local isDuping = false
+local dupeTask = nil
+
+local function startDupe()
+	if selectedGun and not isDuping then
+		isDuping = true
+		TextButton.Text = "Start Dupe : On"
+		dupeTask = task.spawn(function()
+			while isDuping do
+				selectedGun.script()
+				task.wait(0.1)  -- Adjust this delay if needed (e.g., to avoid rate limits)
+			end
+		end)
+	end
+end
+
+local function stopDupe()
+	isDuping = false
+	TextButton.Text = "Start Dupe : Off"
+	if dupeTask then
+		task.cancel(dupeTask)
+		dupeTask = nil
+	end
+end
+
+TextButton.MouseButton1Click:Connect(function()
+	if isDuping then
+		stopDupe()
+	else
+		startDupe()
+	end
+end)
+
+-- Populate the gun list scrolling frame with buttons
+for i, gun in ipairs(guns) do
+	local btn = Instance.new("TextButton")
+	btn.Name = gun.name
+	btn.Parent = GunListScrollingFrame
+	btn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+	btn.BorderSizePixel = 0
+	btn.Size = UDim2.new(1, -10, 0, 30)
+	btn.Position = UDim2.new(0, 5, 0, (i - 1) * 35)
+	btn.Font = Enum.Font.SourceSansSemibold
+	btn.Text = gun.name
+	btn.TextColor3 = Color3.new(1, 1, 1)
+	btn.TextSize = 20
+	btn.MouseButton1Click:Connect(function()
+		selectedGun = gun
+		SelectedText.Text = "SELECTED: " .. gun.name
+	end)
+end
+
+-- Adjust canvas size for scrolling
+GunListScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, #guns * 35)
+
+-- Keybind to toggle GUI visibility (Press 'B' to show/hide)
+local UserInputService = game:GetService("UserInputService")
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if not gameProcessed and input.KeyCode == Enum.KeyCode.L then
+		DupeGui.Enabled = not DupeGui.Enabled
+	end
+end)
